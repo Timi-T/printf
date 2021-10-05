@@ -73,10 +73,3 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-
-int main(void)
-{
-	_printf("my name is %s and i am %d years old\n", "Opeyemi", 789);
-	_printf("");
-	return (0);
-}

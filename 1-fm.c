@@ -89,3 +89,31 @@ int print_integer(int i)
 	count++;
 	return (count);
 }
+
+/**
+ * _pow - function to raise a number to a power
+ *
+ * @i: base number
+ * @j: power
+ *
+ * Return: power of base number
+ */
+
+int _pow(int i, int j)
+{
+	int power;
+	if (j == 0)
+	{
+		return (1);
+	}
+	if (j == 1)
+	{
+		return (i);
+	}
+	while (j != 1)
+	{
+		power *= i;
+		j--;
+	}
+	return (power);
+}
