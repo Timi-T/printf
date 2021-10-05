@@ -52,6 +52,10 @@ int _printf(const char *format, ...)
 						character_count += print_integer(va_arg(data, int));
 						f++;
 						break;
+					case 'i':
+						character_count += print_integer(va_arg(data, int));
+						f++;
+						break;
 				}
 			}
 		}
