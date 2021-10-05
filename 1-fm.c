@@ -30,6 +30,10 @@ int print_string(char *s)
 {
 	int count = 0;
 
+	if (s == 0)
+	{
+		return (count);
+	}
 	while (*s != '\0')
 	{
 		_putchar(*s);
