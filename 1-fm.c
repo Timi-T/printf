@@ -29,9 +29,16 @@ int print_char(char c)
 int print_string(char *s)
 {
 	int count = 0;
+	char *null = "(null)";
 
 	if (s == 0)
 	{
+		while (*null != '\0')
+		{
+			_putchar(*null);
+			count++;
+			null++;
+		}
 		return (count);
 	}
 	while (*s != '\0')
