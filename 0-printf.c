@@ -58,6 +58,10 @@ int _printf(const char *format, ...)
 						break;
 				}
 			}
+			else
+			{
+				_putchar(37);
+			}
 		}
 		f++;
 	}
