@@ -6,7 +6,6 @@
  * print_char - function to print out a single character
  *
  * @c: character to be printed out
- * @count: character count
  *
  * Return: nothing
  */
@@ -14,6 +13,7 @@
 int print_char(char c)
 {
 	int count = 0;
+
 	_putchar((char) c);
 	count++;
 	return (count);
@@ -23,7 +23,6 @@ int print_char(char c)
  * print_string - function to print out a string of characters
  *
  * @s: string to be printed out
- * @count: character count
  *
  * Return: nothing
  */
@@ -31,6 +30,7 @@ int print_char(char c)
 int print_string(char *s)
 {
 	int count = 0;
+
 	while (*s != '\0')
 	{
 		_putchar(*s);
@@ -44,7 +44,6 @@ int print_string(char *s)
  * print_integer - function to print out an integer
  *
  * @i: integer to be printed out
- * @count: character count
  *
  * Return: nothing
  */

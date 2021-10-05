@@ -1,9 +1,7 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <math.h>
 
 /**
  * _printf - function to print to standard output
@@ -16,6 +14,7 @@
 int _printf(const char *format, ...)
 {
 	va_list(data);
+	const char *f = format;
 	int character_count = 0;
 
 	if (format == 0)
@@ -23,45 +22,44 @@ int _printf(const char *format, ...)
 		return (0);
 	}
 	va_start(data, format);
-	while (*format != '\0')
+	while (*f != '\0')
 	{
-		if (*format != '%')
+		if (*f != '%')
 		{
-			_putchar(*format);
+			_putchar(*f);
 			character_count++;
 		}
 		else
 		{
-			if (*(format + 1) == 'c' || *(format + 1) == 's' || *(format + 1) == 'd')
+			if (*(f + 1) == 'c' || *(f + 1) == 's' || *(f + 1) == 'd')
 			{
-				switch(*(format + 1))
+				switch (*(f + 1))
 				{
 					case 'c':
 						character_count += print_char(va_arg(data, int));
-						format++;
+						f++;
 						break;
 					case 's':
 						character_count += print_string(va_arg(data, char *));
-						format++;
+						f++;
 						break;
 					case '%':
 						_putchar('%');
 						character_count++;
+						f++;
 						break;
 					case 'd':
 						character_count += print_integer(va_arg(data, int));
-						format++;
+						f++;
 						break;
 				}
 			}
 		}
-		format++;
+		f++;
 	}
 	va_end(data);
-	printf("%d\n", character_count);
 	return (character_count);
 }
-
 
 /**
  * _putchar - writes the character c to stdout
@@ -79,5 +77,6 @@ int _putchar(char c)
 int main(void)
 {
 	_printf("my name is %s and i am %d years old\n", "Opeyemi", 789);
+	_printf("");
 	return (0);
 }
