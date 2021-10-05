@@ -1,5 +1,4 @@
 #include "main.h"
-#include <math.h>
 #include <unistd.h>
 
 /**
@@ -79,7 +78,7 @@ int print_integer(int i)
 			{
 				_putchar(a + 48);
 				count++;
-				num2 = temp - (pow(10, (len - 1)) * a);
+				num2 = temp - (_pow(10, (len - 1)) * a);
 				len--;
 				break;
 			}
@@ -101,7 +100,9 @@ int print_integer(int i)
 
 int _pow(int i, int j)
 {
-	int power;
+	int power = 1;
+	int a;
+
 	if (j == 0)
 	{
 		return (1);
@@ -110,10 +111,9 @@ int _pow(int i, int j)
 	{
 		return (i);
 	}
-	while (j != 1)
+	for (a = j; a > 0; a--)
 	{
 		power *= i;
-		j--;
 	}
 	return (power);
 }

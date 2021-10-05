@@ -1,1 +1,0 @@
-The printf function created is a function used to display any data to the standard output.
