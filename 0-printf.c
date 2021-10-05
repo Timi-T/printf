@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			if (*(f + 1) == 'c' || *(f + 1) == 's' || *(f + 1) == 'd')
+			if (*(f + 1) == 'c' || *(f + 1) == 's' || *(f + 1) == 'd' || *(f + 1) == '%')
 			{
 				switch (*(f + 1))
 				{
@@ -44,9 +44,9 @@ int _printf(const char *format, ...)
 						f++;
 						break;
 					case '%':
-						_putchar('%');
-						character_count++;
+						_putchar(37);
 						f++;
+						character_count++;
 						break;
 					case 'd':
 						character_count += print_integer(va_arg(data, int));
