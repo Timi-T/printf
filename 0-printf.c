@@ -36,37 +36,35 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			if (*(f + 1) == 'c' || *(f + 1) == 's' || *(f + 1) == 'd' || *(f + 1) == '%')
+			switch (*(f + 1))
 			{
-				switch (*(f + 1))
-				{
-					case 'c':
-						character_count += print_char(va_arg(data, int));
-						f++;
-						break;
-					case 's':
-						character_count += print_string(va_arg(data, char *));
-						f++;
-						break;
-					case '%':
-						_putchar(37);
-						f++;
-						character_count++;
-						break;
-					case 'd':
-						character_count += print_integer(va_arg(data, int));
-						f++;
-						break;
-					case 'i':
-						character_count += print_integer(va_arg(data, int));
-						f++;
-						break;
-				}
+				case 'c':
+					character_count += print_char(va_arg(data, int));
+					f++;
+					break;
+				case 's':
+					character_count += print_string(va_arg(data, char *));
+					f++;
+					break;
+				case '%':
+					_putchar(37);
+					f++;
+					character_count++;
+					break;
+				case 'd':
+					character_count += print_integer(va_arg(data, int));
+					f++;
+					break;
+				case 'i':
+					character_count += print_integer(va_arg(data, int));
+					f++;
+					break;
+				case '\0':
+					return (-1);
+				default:
+					_putchar(37);
 			}
-			else
-			{
-				_putchar(37);
-			}
+		
 		}
 		f++;
 	}
