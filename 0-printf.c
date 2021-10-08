@@ -63,6 +63,7 @@ int _printf(const char *format, ...)
 					return (-1);
 				default:
 					_putchar(37);
+					_putchar(*(f + 1));
 			}
 		
 		}
