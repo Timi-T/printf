@@ -29,6 +29,12 @@ int _printf(const char *format, ...)
 			_putchar(*f);
 			character_count++;
 		}
+		else if (*f == '%' && *(f + 1) == '\0')
+		{
+			_putchar(*f);
+			character_count++;
+			return (character_count);
+		}
 		else
 		{
 			if (*(f + 1) == 'c' || *(f + 1) == 's' || *(f + 1) == 'd' || *(f + 1) == '%')
