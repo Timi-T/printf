@@ -55,9 +55,7 @@ int _printf(const char *format, ...)
 					f++;
 					break;
 				case '\0':
-					_putchar(*f);
-					character_count++;
-					break;
+					return (-1);
 				default:
 					_putchar(*f);
 			}
