@@ -33,7 +33,6 @@ int _printf(const char *format, ...)
 		{
 			_putchar(*f);
 			character_count++;
-			return (character_count);
 		}
 		else
 		{
