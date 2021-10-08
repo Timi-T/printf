@@ -29,11 +29,6 @@ int _printf(const char *format, ...)
 			_putchar(*f);
 			character_count++;
 		}
-		else if (*f == '%' && *(f + 1) == '\0')
-		{
-			_putchar(*f);
-			character_count++;
-		}
 		else
 		{
 			switch (*(f + 1))
@@ -60,10 +55,11 @@ int _printf(const char *format, ...)
 					f++;
 					break;
 				case '\0':
-					return (-1);
+					_putchar(*f);
+					character_count++;
+					break;
 				default:
-					_putchar(37);
-					_putchar(*(f + 1));
+					_putchar(*f);
 			}
 		
 		}
