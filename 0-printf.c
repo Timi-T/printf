@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	const char *f = format;
 	int character_count = 0;
 
-	if (format == 0)
+	if (format == NULL)
 	{
 		return (0);
 	}

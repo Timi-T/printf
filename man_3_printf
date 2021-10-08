@@ -1,0 +1,8 @@
+NAME
+       printf
+SYNOPSIS
+       #include "main.h"
+
+       int printf(const char *format, ...);
+DESCRIPTION
+       The function printf() produces output according to a format as described below. The  function  printf() writes output to stdout, the standard output stream.;
