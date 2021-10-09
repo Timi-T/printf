@@ -60,28 +60,20 @@ int print_string(char *s)
 
 void print_integer(int i)
 {
-	int num1 = i, num2 = i;
-	int a = 0, b = 0, len = 0;
+	int num2 = i;
+	int a = 0, len = 0, len2 = 0;
 	int temp;
-
 
 	if (i < 0)
 	{
 		_putchar(45);
 		num2 = i * (-1);
-		num1 = num2;
 	}
-	while (num1 != 0)
-	{
-		b = num1 % 10;
-		num1 = num1 - b;
-		num1 = num1 / 10;
-		len++;
-	}
+	len = integer_length(i);
 	while (len != 1)
 	{
 		temp = num2;
-		while (num2 > 10)
+		while (num2 >= 10)
 		{
 			a = num2 / 10;
 			num2 = a;
@@ -89,6 +81,12 @@ void print_integer(int i)
 			{
 				_putchar(a + 48);
 				num2 = temp - (_pow(10, (len - 1)) * a);
+				len2 = integer_length(num2);
+				if (len2 != len - 1)
+				{
+					_putchar(48);
+					len--;
+				}
 				len--;
 				break;
 			}
@@ -97,6 +95,27 @@ void print_integer(int i)
 	_putchar(num2 + 48);
 }
 
+/**
+ * integer_length - function to get length of an integer
+ *
+ * @i: integer to get length of
+ *
+ * Return: length of integer
+ */
+
+int integer_length(int i)
+{
+	int c = 0, length = 0;
+
+	while (i != 0)
+	{
+		c = i % 10;
+		i = i - c;
+		i = i / 10;
+		length++;
+	}
+	return (length);
+}
 /**
  * _pow - function to raise a number to a power
  *

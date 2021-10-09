@@ -31,28 +31,24 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			switch (*(f + 1))
+			f++;
+			switch (*f)
 			{
 				case 'c':
 					character_count += print_char(va_arg(data, int));
-					f++;
 					break;
 				case 's':
 					character_count += print_string(va_arg(data, char *));
-					f++;
 					break;
 				case '%':
 					_putchar(37);
-					f++;
 					character_count++;
 					break;
 				case 'd':
 					print_integer(va_arg(data, int));
-					f++;
 					break;
 				case 'i':
 					print_integer(va_arg(data, int));
-					f++;
 					break;
 				case '\0':
 					return (-1);
