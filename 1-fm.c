@@ -1,5 +1,6 @@
 #include "main.h"
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
  * print_char - function to print out a single character
@@ -69,8 +70,11 @@ void print_integer(int i)
 		_putchar(45);
 		num2 = i * (-1);
 	}
-	len = integer_length(i);
-	while (len != 1)
+	if (i != 0)
+	{
+		len = integer_length(i);
+	}
+	while (len != 1 && len != 0)
 	{
 		temp = num2;
 		while (num2 >= 10)
