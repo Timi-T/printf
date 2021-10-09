@@ -47,11 +47,11 @@ int _printf(const char *format, ...)
 					character_count++;
 					break;
 				case 'd':
-					character_count += print_integer(va_arg(data, int));
+					print_integer(va_arg(data, int));
 					f++;
 					break;
 				case 'i':
-					character_count += print_integer(va_arg(data, int));
+					print_integer(va_arg(data, int));
 					f++;
 					break;
 				case '\0':

@@ -58,17 +58,16 @@ int print_string(char *s)
  * Return: nothing
  */
 
-int print_integer(int i)
+void print_integer(int i)
 {
 	int num1 = i, num2 = i;
 	int a = 0, b = 0, len = 0;
-	int temp, count = 0;
+	int temp;
 
 
 	if (i < 0)
 	{
 		_putchar(45);
-		count++;
 		num2 = i * (-1);
 		num1 = num2;
 	}
@@ -89,7 +88,6 @@ int print_integer(int i)
 			if (a < 10)
 			{
 				_putchar(a + 48);
-				count++;
 				num2 = temp - (_pow(10, (len - 1)) * a);
 				len--;
 				break;
@@ -97,8 +95,6 @@ int print_integer(int i)
 		}
 	}
 	_putchar(num2 + 48);
-	count++;
-	return (i);
 }
 
 /**
