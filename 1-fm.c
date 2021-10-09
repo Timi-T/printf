@@ -63,11 +63,12 @@ int print_integer(int i)
 {
 	int num2 = i;
 	int a = 0, len = 0, len2 = 0;
-	int temp;
+	int temp, count = 0;
 
 	if (i < 0)
 	{
 		_putchar(45);
+		count++;
 		num2 = i * (-1);
 	}
 	if (i != 0)
@@ -84,11 +85,13 @@ int print_integer(int i)
 			if (a < 10)
 			{
 				_putchar(a + 48);
+				count++;
 				num2 = temp - (_pow(10, (len - 1)) * a);
 				len2 = integer_length(num2);
 				if (len2 != len - 1)
 				{
 					_putchar(48);
+					count++;
 					len--;
 				}
 				len--;
@@ -97,7 +100,8 @@ int print_integer(int i)
 		}
 	}
 	_putchar(num2 + 48);
-	return (i);
+	count++;
+	return (count);
 }
 
 /**
