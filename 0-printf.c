@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 {
 	va_list(data);
 	const char *f = format;
-	int character_count = 0;
+	int character_count = 0, number;
 
 	if (format == NULL)
 	{
@@ -45,10 +45,14 @@ int _printf(const char *format, ...)
 					character_count++;
 					break;
 				case 'd':
-					print_integer(va_arg(data, int));
+					number = va_arg(data, int);
+					print_integer(number);
+					print_integer(number);
 					break;
 				case 'i':
-					print_integer(va_arg(data, int));
+					number = va_arg(data, int);
+					print_integer(number);
+					print_integer(number);
 					break;
 				case '\0':
 					return (-1);
