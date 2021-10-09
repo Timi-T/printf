@@ -64,6 +64,7 @@ int print_integer(int i)
 	int a = 0, b = 0, len = 0;
 	int temp, count = 0;
 
+
 	if (i < 0)
 	{
 		_putchar(45);
@@ -97,7 +98,7 @@ int print_integer(int i)
 	}
 	_putchar(num2 + 48);
 	count++;
-	return (count);
+	return (i);
 }
 
 /**
