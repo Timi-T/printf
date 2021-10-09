@@ -47,11 +47,9 @@ int _printf(const char *format, ...)
 				case 'd':
 					number = va_arg(data, int);
 					print_integer(number);
-					print_integer(number);
 					break;
 				case 'i':
 					number = va_arg(data, int);
-					print_integer(number);
 					print_integer(number);
 					break;
 				case '\0':
