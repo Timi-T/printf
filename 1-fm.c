@@ -59,7 +59,7 @@ int print_string(char *s)
  * Return: nothing
  */
 
-void print_integer(int i)
+int print_integer(int i)
 {
 	int num2 = i;
 	int a = 0, len = 0, len2 = 0;
@@ -97,6 +97,7 @@ void print_integer(int i)
 		}
 	}
 	_putchar(num2 + 48);
+	return (i);
 }
 
 /**
